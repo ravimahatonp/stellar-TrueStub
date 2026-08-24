@@ -1,0 +1,22 @@
+{
+  "name": "@truestub/backend",
+  "version": "0.1.0",
+  "description": "TrueStub backend service \u2014 scaffold only today (health check + project structure). See README.md for the roadmap.",
+  "private": true,
+  "scripts": {
+    "dev": "node init && tsx watch src/index.ts",
+    "build": "node init && tsc -p tsconfig.json",
+    "start": "node init && node dist/index.js",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "20.17.25",
+    "tsx": "^4.19.2",
+    "typescript": "5.8.2"
+  }
+}
