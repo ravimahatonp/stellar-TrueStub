@@ -1,7 +1,7 @@
 {
   "name": "@truestub/frontend",
   "version": "0.1.0",
-  "description": "TrueStub — a trustless P2P escrow platform for secondary-market ticket transfers, built on Stellar via the TrustlessWork API.",
+  "description": "TrueStub \u2014 a trustless P2P escrow platform for secondary-market ticket transfers, built on Stellar via the TrustlessWork API.",
   "private": true,
   "engines": {
     "node": ">=20.0.0",
@@ -11,10 +11,10 @@
     "codegen": "graphql-codegen --config codegen.ts",
     "codegen:watch": "graphql-codegen --config codegen.ts --watch",
     "codegen:check": "graphql-codegen --config codegen.ts --check",
-    "dev": "next dev",
-    "build": "npm run codegen || echo 'Codegen failed, using mock/existing types' && next build",
-    "dev:full": "npm run codegen:watch & next dev",
-    "start": "next start",
+    "dev": "node init && next dev",
+    "build": "node init && npm run codegen || echo 'Codegen failed, using mock/existing types' && next build",
+    "dev:full": "node init && npm run codegen:watch & next dev",
+    "start": "node init && next start",
     "test": "jest",
     "test:ci": "jest --ci --coverage --passWithNoTests",
     "test:e2e": "cypress run",
@@ -23,7 +23,7 @@
     "format:check": "prettier --check .",
     "typecheck": "tsc --noEmit",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "build-storybook": "node init && storybook build",
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
@@ -91,6 +91,7 @@
     "@commitlint/cli": "^19.8.0",
     "@commitlint/config-conventional": "^19.8.0",
     "@eslint/eslintrc": "^3",
+    "@firebase/rules-unit-testing": "^5.0.2",
     "@graphql-codegen/cli": "^6.1.1",
     "@graphql-codegen/client-preset": "^5.2.2",
     "@graphql-codegen/introspection": "^5.0.0",
